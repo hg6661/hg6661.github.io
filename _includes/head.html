@@ -13,104 +13,185 @@
     
     <meta name="description" content="{{ page.description | default: site.description }}">
     
-    <!-- 添加基础样式 -->
+    <!-- 基础样式 -->
     <style>
-        /* 基础样式 */
+        /* ========== CSS变量 ========== */
         :root {
-            --primary-color: #2563eb;
+            --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --text-color: #1f2937;
+            --secondary: #7c3aed;
+            --text: #1f2937;
             --text-light: #6b7280;
-            --bg-color: #ffffff;
-            --border-color: #e5e7eb;
+            --bg: #ffffff;
+            --border: #e5e7eb;
             --card-bg: #f8fafc;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
         }
         
+        /* ========== 重置样式 ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        /* ========== 基础布局 ========== */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            max-width: 800px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 20px;
+            min-height: 100vh;
         }
         
-        /* 导航栏样式 */
+        /* ========== 导航栏 ========== */
         nav {
-            background: linear-gradient(135deg, var(--primary-color), #7c3aed);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 16px 24px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
         }
         
         nav a {
             color: white;
             text-decoration: none;
-            margin-right: 2rem;
+            margin-right: 24px;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 18px;
+            transition: opacity 0.3s;
         }
         
         nav a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
         }
         
-        /* 标题样式 */
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        h2 {
-            color: var(--primary-dark);
-            font-size: 2rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* 卡片样式 */
-        .module-card {
+        /* ========== 卡片样式 ========== */
+        .card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
         
-        .module-card h2 {
-            color: var(--primary-color);
-            margin-top: 0;
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
         }
         
-        /* 页脚样式 */
+        /* 卡片内的标题 */
+        .card h1 {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 16px;
+            border: none;
+            padding: 0;
+        }
+        
+        .card h2 {
+            color: var(--primary-dark);
+            font-size: 28px;
+            margin: 0 0 12px 0;
+            border: none;
+            padding: 0;
+        }
+        
+        .card h3 {
+            color: var(--text);
+            font-size: 22px;
+            margin: 16px 0 8px 0;
+            border: none;
+            padding: 0;
+        }
+        
+        /* 卡片内的文字 */
+        .card p {
+            color: var(--text-light);
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        /* 卡片内的列表 */
+        .card ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .card li {
+            margin-bottom: 8px;
+            color: var(--text);
+            font-size: 17px;
+        }
+        
+        /* ========== 图标样式 ========== */
+        .icon {
+            display: inline-block;
+            font-size: 24px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        
+        /* ========== 页脚 ========== */
         footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--border-color);
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 2px solid var(--border);
             color: var(--text-light);
             text-align: center;
+            font-size: 16px;
         }
         
-        /* 响应式设计 */
+        /* ========== 响应式设计 ========== */
         @media (max-width: 768px) {
             body {
-                padding: 1rem;
+                padding: 16px;
+            }
+            
+            nav {
+                padding: 14px 20px;
+                margin-bottom: 30px;
             }
             
             nav a {
                 display: block;
-                margin: 0.75rem 0;
+                margin: 10px 0;
+                font-size: 17px;
+            }
+            
+            .card {
+                padding: 24px;
+                margin-bottom: 20px;
+            }
+            
+            .card h1 {
+                font-size: 30px;
+            }
+            
+            .card h2 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+            }
+            
+            .card h1 {
+                font-size: 26px;
+            }
+            
+            .card h2 {
+                font-size: 22px;
             }
         }
     </style>
