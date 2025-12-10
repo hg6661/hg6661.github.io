@@ -68,3 +68,82 @@ description: "欢迎来到我们的宿舍空间"
         <li>深夜分享的人生哲理（宇宙的起源...）</li>
     </ul>
 </div>
+
+<!-- 延迟加载背景图片的JavaScript -->
+<script>
+(function() {
+    // 等待页面完全加载
+    function initBackground() {
+        console.log('🚀 开始加载背景图片...');
+        
+        // 创建图片对象进行预加载
+        var bgImage = new Image();
+        
+        // 图片加载成功回调
+        bgImage.onload = function() {
+            console.log('✅ 背景图片加载完成，尺寸:', this.width + 'x' + this.height);
+            
+            // 延迟300ms让文字完全显示，然后添加背景
+            setTimeout(function() {
+                document.body.classList.add('bg-loaded');
+                console.log('🎨 背景图片已应用');
+            }, 300);
+        };
+        
+        // 图片加载失败回调
+        bgImage.onerror = function() {
+            console.log('⚠️ 背景图片加载失败，使用纯色背景');
+            // 可以在这里添加备用方案
+        };
+        
+        // 延迟500ms开始加载图片，让文字先显示
+        setTimeout(function() {
+            console.log('📥 开始下载背景图片...');
+            bgImage.src = 'assets/images/1.jpg';
+        }, 500);
+    }
+    
+    // 检测页面加载状态
+    if (document.readyState === 'complete') {
+        // 页面已加载完成，直接执行
+        initBackground();
+    } else {
+        // 等待页面完全加载
+        window.addEventListener('load', initBackground);
+    }
+    
+    // 可选：添加加载进度提示
+    window.addEventListener('DOMContentLoaded', function() {
+        console.log('📄 页面内容已加载完成');
+    });
+})();
+</script>
+
+<!-- 简单的加载状态样式 -->
+<style>
+/* 初始加载状态提示（可选） */
+body::after {
+    content: '正在加载背景...';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+body.bg-loaded::after {
+    content: '背景加载完成 ✓';
+    opacity: 0.8;
+    animation: fadeOut 2s forwards 1s;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+</style>
