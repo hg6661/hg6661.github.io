@@ -78,5 +78,81 @@
             color: #6b7280;
             text-align: center;
         }
+
+        /* 响应式设计 - 手机端适配 */
+@media (max-width: 768px) {
+    /* 整体布局调整 */
+    body {
+        padding: 0.75rem;
+        max-width: 100%;
+    }
+    
+    /* 导航栏优化 */
+    nav {
+        padding: 0.75rem;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin: 0.25rem 0.75rem 0.25rem 0;
+        font-size: 0.95rem;
+    }
+    
+    /* 标题调整 */
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* 段落调整 */
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* 页脚调整 */
+    footer {
+        margin-top: 2rem;
+        padding-top: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    /* 卡片布局调整（如果使用） */
+    .card, .feature-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* 小屏幕手机优化 */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+}
     </style>
 </head>
