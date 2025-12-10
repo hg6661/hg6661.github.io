@@ -1,0 +1,34 @@
+# _config.yml
+title: "我的个人网站"
+description: "技术博客与项目展示"
+baseurl: ""
+url: "https://hg6661.github.io"
+
+# 禁用默认主题，使用自定义
+theme: null
+
+# 基本插件
+plugins:
+  - jekyll-seo-tag
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# 包含目录
+include:
+  - _layouts
+
+# 排除目录
+exclude:
+  - README.md
+  - node_modules/
+
+# 社交链接
+github_username: hg6661
+email: your-email@example.com
+
+# 国际化
+lang: zh-CN
+timezone: Asia/Shanghai
