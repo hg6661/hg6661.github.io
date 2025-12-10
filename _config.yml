@@ -1,16 +1,12 @@
-# 位置：仓库根目录 /_config.yml
-title: "你的名字 | 个人网站"
+title: "双满月 | hg6661.github.io"
 description: "技术博客与项目展示"
-baseurl: ""  # 个人主页留空
-url: "https://hg66661.github.io"
+baseurl: "" # 个人主页留空
+url: "https://hg6661.github.io"  # 修正用户名
 
-# ⚠️ 关键设置：禁用Jekyll默认主题
-theme: null  # 设置为null使用自定义主题
-remote_theme: ""  # 清空远程主题设置
+# 关键设置：禁用Jekyll默认主题
+theme: null # 设置为null使用自定义主题
 
-# 插件配置（可选，部分插件需要主题支持）
-plugins: []
-# 或只保留基础插件
+# 插件配置（只保留一个plugins定义）
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -24,9 +20,8 @@ permalink: pretty
 include:
   - _includes
   - _layouts
-  - assets
 
-# 排除的目录
+# 排除的目录（必须添加）
 exclude:
   - README.md
   - node_modules/
@@ -34,6 +29,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-# 社交链接
-github_username: hg66661
+# 社交链接（可选）
+github_username: hg6661
 email: your-email@example.com
+
+# 构建设置
+future: true
+timezone: Asia/Shanghai
