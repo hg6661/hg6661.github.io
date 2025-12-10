@@ -1,13 +1,13 @@
-# _config.yml
-title: "我的个人网站"
-description: "技术博客与项目展示"
+# 网站基础配置
+title: "神奇201-2"
+description: "宿舍故事分享空间"
 baseurl: ""
 url: "https://hg6661.github.io"
 
-# 禁用默认主题，使用自定义
+# 主题设置
 theme: null
 
-# 基本插件
+# 插件
 plugins:
   - jekyll-seo-tag
 
@@ -18,18 +18,18 @@ permalink: pretty
 
 # 包含目录
 include:
-  - _layouts
   - _includes
+  - _layouts
 
 # 排除目录
 exclude:
   - README.md
   - node_modules/
+  - vendor/
 
 # 社交链接
 github_username: hg6661
-email: your-email@example.com
 
-# 国际化
-lang: zh-CN
+# 其他设置
+future: true
 timezone: Asia/Shanghai
