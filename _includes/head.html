@@ -1,3 +1,4 @@
+<!-- _includes/head.html -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,9 @@
     
     <meta name="description" content="{{ page.description | default: site.description }}">
     
-    <!-- 基础样式 -->
+    <!-- 添加基础样式 -->
     <style>
+        /* 基础样式 */
         :root {
             --primary-color: #2563eb;
             --text-color: #1f2937;
@@ -32,17 +34,49 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        /* 导航栏样式 */
+        nav {
+            background: var(--primary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 内容样式 */
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: #6b7280;
+            text-align: center;
         }
     </style>
-    
-    <!-- SEO 标签（如果启用jekyll-seo-tag插件） -->
-    {% if site.plugins contains "jekyll-seo-tag" %}
-        {% seo %}
-    {% endif %}
 </head>
