@@ -10,6 +10,7 @@ theme: null
 # 基本插件
 plugins:
   - jekyll-seo-tag
+  - _jekyll-sitemap
 
 # 构建设置
 markdown: kramdown
@@ -19,6 +20,7 @@ permalink: pretty
 # 包含目录
 include:
   - _layouts
+  - _includes
 
 # 排除目录
 exclude:
