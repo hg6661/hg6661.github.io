@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+    {% include head.html %}
+<body>
+    {% include header.html %}
+    
+    <main class="container">
+        {{ content }}
+    </main>
+    
+    {% include footer.html %}
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
