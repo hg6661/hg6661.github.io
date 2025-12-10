@@ -10,7 +10,7 @@ theme: null
 # 基本插件
 plugins:
   - jekyll-seo-tag
-  - _jekyll-sitemap
+  - jekyll-sitemap
 
 # 构建设置
 markdown: kramdown
