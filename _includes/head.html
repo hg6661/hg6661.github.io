@@ -41,11 +41,34 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: var(--bg);
+            
+            /* 背景图片设置 */
+            background-image: url('/assets/images/20250605013401174905844197801.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            /* 原有布局设置 */
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             min-height: 100vh;
+            position: relative;
+        }
+        
+        /* 半透明遮罩层 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            z-index: -1;
         }
         
         /* ========== 导航栏 ========== */
@@ -72,7 +95,12 @@
         
         /* ========== 卡片样式 ========== */
         .card {
-            background: var(--card-bg);
+            /* 半透明背景 */
+            background: rgba(248, 250, 252, 0.80);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            
+            /* 原有样式 */
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 32px;
@@ -85,6 +113,7 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             border-color: var(--primary);
+            background: rgba(248, 250, 252, 0.90);
         }
         
         /* 卡片内的标题 */
